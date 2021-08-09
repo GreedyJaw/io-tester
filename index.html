@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <meta charset="utf8">
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/tester.css">
+    </head>
+    <body>
+        <div style="padding: 50px 100px">
+            <div style="margin-bottom: 30px">
+                <span class="badge badge-danger" id="status">Disconnected</span>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <h2>Connection</h2>
+                    <form>
+
+                        <div class="form-group">
+                            <label for="url">URL</label>
+                            <input type="text" class="form-control" id="url" placeholder="Enter server url">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="url">Token</label>
+                            <input type="text" class="form-control" id="token" placeholder="Enter auth token">
+                        </div>
+
+                        <button type="button" id="connect" class="btn btn-primary">Connect</button>
+                    </form>
+                </div>
+                <div class="col-3">
+                    <h2>Testing</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="url">Emitting</label>
+                            <input type="text" class="form-control" id="action" placeholder="Action...">
+                        </div>
+                        <div class="form-group">
+                            <label for="url">Data</label>
+                            <textarea class="form-control" id="data"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="emit" class="btn btn-primary">Send</button>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="url">Listening</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="event" placeholder="Event...">
+                                <div class="input-group-append">
+                                    <button type="button" id="listen" class="btn btn-primary">Listen</button>
+                                </div>
+                            </div>
+                        </div>
+                        <label><b>Listeners</b></label>
+                        <div id="listeners"></div>
+                        <button class="btn btn-danger" type="button" id="reset">Reset listeners</button>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <h2>Result</h2>
+                    <div class="result" id="result">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/socket.io.min.js"></script>
+    <script src="./js/tester.js"></script>
+</html>
